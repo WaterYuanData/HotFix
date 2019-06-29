@@ -34,10 +34,11 @@ public class Main2Activity extends AppCompatActivity {
                 switch (v.getId()) {
                     case R.id.calculate:
                         int calculate = new Calculator().calculate();
-                        textView.setText(calculate);
+                        // 直接设置数字，会把int当成resid，造成找不到资源的异常
+                        textView.setText("" + calculate);
                         break;
                     case R.id.fix:
-                        //                        getPath();
+                        // etPath();
                         DxManager dxManager = new DxManager(getApplicationContext());
                         dxManager.loadDex(getPath());
                         break;

@@ -69,8 +69,10 @@ public class DxManager {
         }
     }
 
-    private void replace(Method wrongMethod, Method method) {
+    private void replace(Method wrongMethod, Method rightMethod) {
         Log.i(TAG, "replace: " + stringFromJNI());
+        replaceJNI(wrongMethod, rightMethod);
+        Log.i(TAG, "replace: ***********");
     }
 
     static {
@@ -78,4 +80,6 @@ public class DxManager {
     }
 
     public native String stringFromJNI();
+
+    public native void replaceJNI(Method wrongMethod, Method rightMethod);
 }

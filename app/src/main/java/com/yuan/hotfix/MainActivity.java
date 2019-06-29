@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.yuan.hotfix.andfix.Calculator;
 import com.yuan.hotfix.andfix.Main2Activity;
 
 public class MainActivity extends AppCompatActivity {
