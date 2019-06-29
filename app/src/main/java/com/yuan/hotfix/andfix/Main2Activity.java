@@ -58,10 +58,8 @@ public class Main2Activity extends AppCompatActivity {
         Log.i(TAG, "getPath: getExternalStorageDirectory=" + externalStorageDirectory.getAbsolutePath());
         File file = new File(externalStorageDirectory.getAbsolutePath() + "/_ae");
         Log.i(TAG, "getPath: exists=" + file.exists());
-        file = new File(externalStorageDirectory.getAbsolutePath() + "/_ae/out.dex");
-        Log.i(TAG, "getPath: _ae/out.dex exists=" + file.exists());
-        File file2 = new File(externalStorageDirectory.getAbsolutePath() + "/_ae/out2.dex");
-        Log.i(TAG, "getPath2: _ae/out2.dex exists=" + file2.exists());
+        file = new File(externalStorageDirectory.getAbsolutePath() + "/_ae/fix.dex");
+        Log.i(TAG, "getPath: _ae/fix.dex exists=" + file.exists());
         return file;
         /*
 2019-06-02 17:44:08.194 32253-32253/com.yuan.testandfix I/MainActivity: getPath: getExternalStorageDirectory=/storage/emulated/0

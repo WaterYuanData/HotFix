@@ -37,7 +37,7 @@ public class DxManager {
         } catch (IOException e) {
             e.printStackTrace();
             /*
-             * java.io.IOException: No original dex files found for dex location /storage/emulated/0/_ae/out.dex
+             * java.io.IOException: No original dex files found for dex location /storage/emulated/0/_ae/fix.dex
              * 是缺少授予WRITE_EXTERNAL_STORAGE权限
              * */
         }
@@ -53,8 +53,11 @@ public class DxManager {
             String wrongClazzName = replace.clazz();
             String wrongMethod1Name = replace.method();
             try {
+                // TODO: 2019/6/29 混淆需要一些其它处理
+
                 Class<?> wrongClazz = Class.forName(wrongClazzName);
                 //                Method wrongMethod = wrongClazz.getDeclaredMethod(wrongMethod1Name);
+                // 修复带参方法时，注意参数问题
                 Method wrongMethod = wrongClazz.getMethod(wrongMethod1Name, method.getParameterTypes());
                 replace(wrongMethod, method);
             } catch (ClassNotFoundException e) {
@@ -67,5 +70,12 @@ public class DxManager {
     }
 
     private void replace(Method wrongMethod, Method method) {
+        Log.i(TAG, "replace: " + stringFromJNI());
     }
+
+    static {
+        System.loadLibrary("native-lib");
+    }
+
+    public native String stringFromJNI();
 }
