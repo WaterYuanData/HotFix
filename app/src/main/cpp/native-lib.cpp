@@ -9,14 +9,14 @@ Java_com_yuan_hotfix_andfix_DxManager_stringFromJNI(
     std::string hello = "Hello from C++";
     return env->NewStringUTF(hello.c_str());
 }
-extern "C"
-JNIEXPORT void JNICALL
+extern "C" JNIEXPORT void JNICALL
 Java_com_yuan_hotfix_andfix_DxManager_replaceJNI(JNIEnv *env, jobject instance, jobject wrongMethod,
                                                  jobject rightMethod) {
     art::ArtMethod *artReplaceMethod = (art::ArtMethod *) env->FromReflectedMethod(
             wrongMethod);
     art::ArtMethod *artMethod = (art::ArtMethod *) env->FromReflectedMethod(
             rightMethod);
+    // 自定义的头文件只是声明，使如下代码通过编译，代码真正执行仍是依靠手机系统中的art_method.h
     artReplaceMethod->access_flags_ = artMethod->access_flags_;
     artReplaceMethod->declaring_class_ = artMethod->declaring_class_;
     artReplaceMethod->dex_code_item_offset_ = artMethod->dex_code_item_offset_;

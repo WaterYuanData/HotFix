@@ -10,6 +10,6 @@
 7.C++实现Java方法的替换  
 
 ---
-[andfix热修复,mp4](https://ke.qq.com/webcourse/index.html#course_id=130901&term_id=100146035&taid=1287279008153429&vid=r1417pykrgc)
+[andfix热修复.mp4](https://ke.qq.com/webcourse/index.html#course_id=130901&term_id=100146035&taid=1287279008153429&vid=r1417pykrgc)
 
 [andfix热修复核心代码解析](https://www.jianshu.com/p/3a1c4c89225a)
